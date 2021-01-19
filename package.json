@@ -21,8 +21,7 @@
     "start": "node server.js",
     "predeploy": "yarn build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
-    "heroku-postbuild": "npm run build"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
