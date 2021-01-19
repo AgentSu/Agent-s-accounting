@@ -1,0 +1,54 @@
+type Query {
+	Spending(user: String): [spending]
+	Users(user: String, pass: String): users
+}
+
+type Mutation {
+	createSpending(data: createSpendingInput): spending
+	deleteSpending(id: String!): spending
+
+	createUsers(data: createUsersInput): users
+	deleteUsers(id: String!, pass: String!): users
+}
+
+type Subscription {
+	Spending: SpendingSubscriptionPayload
+}
+
+type spending {
+	id: String
+	user: String
+	date: String
+	type: String
+	detail: String
+	amount: Int
+}
+
+type users {
+	id: String
+	userName: String
+	password: Boolean
+}
+
+input createSpendingInput {
+	user: String!
+	date: String!
+	type: String!
+	detail: String!
+	amount: Int!
+}
+
+input createUsersInput {
+	userName: String!
+	password: String!
+}
+
+enum MutationType {
+	CREATED
+	DELETED
+}
+
+type SpendingSubscriptionPayload {
+	mutation: MutationType!
+	data: spending!
+}
