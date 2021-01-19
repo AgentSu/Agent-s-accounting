@@ -12,12 +12,12 @@ import { WebSocketLink } from 'apollo-link-ws';
 import { getMainDefinition } from 'apollo-utilities'
 
 const httpLink = new HttpLink({
-	uri: 'http://localhost:4000/'
+	uri: `http://agent-s-accounting.herokuapp.com:${process.env.PORT || 4000}/`
 })
 
 const wsLink = new WebSocketLink({
-	uri: `ws://localhost:4000/`,
-	options: { reconnect: true, transports: ['websocket']}
+	uri: `ws://agent-s-accounting.herokuapp.com:${process.env.PORT || 4000}/`,
+	options: { reconnect: true }
 })
 
 const link = split(
