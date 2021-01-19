@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const port = process.env.PORT || 80;
 const app = express();
-import { graphqlExpress } from 'apollo-server-express';
+const graphqlExpress = require('apollo-server-express').graphqlExpress;
 const myGraphqlSchema = require('./server/schema.graphql')
 
 app.use(express.static(path.join(__dirname, 'build')));
