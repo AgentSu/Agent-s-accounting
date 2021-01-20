@@ -62,30 +62,3 @@ const QLserver = new GraphQLServer({
   }
 })
 QLserver.start({port: 4000}, () => {console.log(`The QLserver is up on port 4000`)})
-/*
-db.once('open', () => {
-  console.log('MongoDB connected!')
-  
-  function startQLserver(Spending,Users) {
-    const QLserver = new GraphQLServer({
-      typeDefs: './server/schema.graphql',
-      resolvers: {
-        Query,
-        Mutation,
-        Subscription
-      },
-      context: {
-        Spending,
-        Users,
-        pubsub
-      }
-    })
-
-    QLserver.start({port: 4000}, () => {
-      console.log(`The QLserver is up on port 4000`)
-    })
-  }
-
-  startQLserver(Spending,Users)
-})
-*/
