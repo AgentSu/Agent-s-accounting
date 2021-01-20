@@ -12,11 +12,11 @@ import { WebSocketLink } from 'apollo-link-ws';
 import { getMainDefinition } from 'apollo-utilities'
 
 const httpLink = new HttpLink({
-	uri: `https://agent-s-accounting.herokuapp.com:${process.env.PORT || 4000}/`
+	uri: `https://agent-s-accounting.herokuapp.com:${4000}/`
 })
 
 const wsLink = new WebSocketLink({
-	uri: `wss://agent-s-accounting.herokuapp.com:${process.env.PORT || 4000}/`,
+	uri: `wss://agent-s-accounting.herokuapp.com:${4000}/`,
 	options: { reconnect: true, timeout: 30000, lazy:true }
 })
 //==============================================================
