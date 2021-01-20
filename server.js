@@ -67,7 +67,7 @@ db.once('open', () => {
     })
 
     QLserver.start({port: 4000}, () => {
-      console.log(`The QLserver is up on port ${4000}`)
+      console.log(`The QLserver is up on port 4000`)
     })
   }
 

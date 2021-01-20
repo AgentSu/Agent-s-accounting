@@ -12,11 +12,11 @@ import { WebSocketLink } from 'apollo-link-ws';
 import { getMainDefinition } from 'apollo-utilities'
 
 const httpLink = new HttpLink({
-	uri: `http://localhost:${4000}/`
+	uri: `http://localhost:4000/`
 })
 
 const wsLink = new WebSocketLink({
-	uri: `ws://localhost:${4000}/`,
+	uri: `ws://localhost:4000/`,
 	options: { reconnect: true, timeout: 30000, lazy:true }
 })
 //==============================================================
@@ -39,9 +39,6 @@ wsLink.subscriptionClient.on("reconnected", () => {
 wsLink.subscriptionClient.on("disconnected", () => {
   console.log("disconnected");
 });
-
-//wsLink.subscriptionClient.maxConnectTimeGenerator.duration = () =>
-  //wsLink.subscriptionClient.maxConnectTimeGenerator.max;
 //==============================================================
 const link = split(
 	({query}) => {

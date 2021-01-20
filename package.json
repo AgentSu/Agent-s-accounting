@@ -16,8 +16,7 @@
     "react-scripts": "4.0.1",
     "web-vitals": "^0.2.4",
     "websocket": "^1.0.32",
-    "mongoose": "^5.10.15",
-    "dotenv-defaults": "^2.0.1"
+    "mongoose": "^5.10.15"
   },
   "scripts": {
     "start": "node server.js",

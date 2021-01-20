@@ -49,4 +49,3 @@ const Mutation = {
 }
 
 module.exports = { Mutation }
-//export { Mutation as default }

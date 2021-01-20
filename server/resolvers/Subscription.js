@@ -7,4 +7,3 @@ const Subscription = {
 };
 
 module.exports = { Subscription }
-//export {Subscription as default}

@@ -44,4 +44,3 @@ const Query = {
 };
 
 module.exports = { Query }
-//export { Query as default }
