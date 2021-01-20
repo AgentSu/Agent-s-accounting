@@ -24,6 +24,7 @@ function App() {
 		subscribeToMore({
 			document: SPENDING_SUBSCRIPTION,
 			updateQuery: (prev, { subscriptionData }) => {
+				console.log("subscribeToMore!!!")
 				const pre_data = prev.Spending
 				const sub_data = subscriptionData.data.Spending.data
 				const sub_type = subscriptionData.data.Spending.mutation
