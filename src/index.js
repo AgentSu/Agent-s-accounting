@@ -19,7 +19,6 @@ const wsLink = new WebSocketLink({
 	uri: `wss://agent-s-accounting.herokuapp.com:${process.env.PORT || 4000}/`,
 	options: { reconnect: true }
 })
-wslink.maxConnectTimeGenerator.duration = () => wslink.maxConnectTimeGenerator.max
 
 const link = split(
 	({query}) => {
