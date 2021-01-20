@@ -65,7 +65,15 @@ function Sign(props) {
 		}
 	}
 
+	const handleSwitch = () => {
+		setSignup(true)
+		setUsername("")
+		setPassword("")
+	}
+
 	const handleReturn = () => {
+		setUsername("")
+		setPassword("")
 		setSignin(false)
 		setSignup(false)
 	}
@@ -117,7 +125,7 @@ function Sign(props) {
     						<Button type="primary" htmlType="submit">
     							Submit
     						</Button>
-    						<Button onClick={() => {setSignup(true)}}>
+    						<Button onClick={() => {handleSwitch()}}>
     							Sign up
     						</Button>
     					</Space>
