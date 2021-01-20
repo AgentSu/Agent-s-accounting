@@ -12,14 +12,34 @@ import { WebSocketLink } from 'apollo-link-ws';
 import { getMainDefinition } from 'apollo-utilities'
 
 const httpLink = new HttpLink({
-	uri: 'http://localhost:4000/'
+	uri: `http://localhost:4000/`
 })
 
 const wsLink = new WebSocketLink({
 	uri: `ws://localhost:4000/`,
-	options: { reconnect: true }
+	options: { reconnect: true, timeout: 30000, lazy:true }
 })
+//==============================================================
+wsLink.subscriptionClient.on("connecting", () => {
+  console.log("connecting");
+});
 
+wsLink.subscriptionClient.on("connected", () => {
+  console.log("connected");
+});
+
+wsLink.subscriptionClient.on("reconnecting", () => {
+  console.log("reconnecting");
+});
+
+wsLink.subscriptionClient.on("reconnected", () => {
+  console.log("reconnected");
+});
+
+wsLink.subscriptionClient.on("disconnected", () => {
+  console.log("disconnected");
+});
+//==============================================================
 const link = split(
 	({query}) => {
 		const definition = getMainDefinition(query)

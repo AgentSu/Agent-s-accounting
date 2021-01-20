@@ -3,13 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@apollo/client": "^3.3.7",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "antd": "^4.8.4",
     "apollo-boost": "^0.4.9",
     "apollo-link-ws": "^1.0.20",
+    "dotenv-defaults": "^2.0.1",
     "graphql-yoga": "^1.18.3",
+    "mongoose": "^5.10.15",
     "react": "^17.0.1",
     "react-apollo": "^3.1.5",
     "react-dom": "^17.0.1",
@@ -18,11 +21,11 @@
     "websocket": "^1.0.32"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "server": "nodemon"
+    "startDev": "react-scripts start"
   },
   "eslintConfig": {
     "extends": [

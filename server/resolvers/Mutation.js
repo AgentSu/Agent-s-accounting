@@ -1,4 +1,4 @@
-import uuidv4 from 'uuid/v4'
+const uuidv4 = require('uuid/v4')
 
 const Mutation = {
 	createSpending(parents, args, {Message, Spending, Users, pubsub}, info) {
@@ -48,4 +48,4 @@ const Mutation = {
 	}
 }
 
-export { Mutation as default }
+module.exports = { Mutation }

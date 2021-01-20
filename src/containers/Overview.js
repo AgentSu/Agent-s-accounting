@@ -10,7 +10,7 @@ function Overview(props) {
 		if (parseInt(amount) > 0) {
 			Revenue += amount
 		} else {
-			Expanses += amount
+			Expanses -= amount
 		}
 		return
 	})

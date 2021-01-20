@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { DetailList, Overview, Sign, New } from './containers/index';
 import { SPENDING_QUERY, DELETE_SPENDING_MUTATION, SPENDING_SUBSCRIPTION} from './graphql/index'
 import { useQuery, useMutation } from '@apollo/react-hooks'
-import { Layout, Tag, message } from 'antd'
+import { Layout, Tag, message, Button } from 'antd'
 
 const { Header, Content, Footer } = Layout
 
@@ -24,6 +24,7 @@ function App() {
 		subscribeToMore({
 			document: SPENDING_SUBSCRIPTION,
 			updateQuery: (prev, { subscriptionData }) => {
+				console.log("subscribeToMore!!!")
 				const pre_data = prev.Spending
 				const sub_data = subscriptionData.data.Spending.data
 				const sub_type = subscriptionData.data.Spending.mutation
@@ -57,6 +58,13 @@ function App() {
 		}
 	}
 
+	const handleSignOut = () => {
+		setUsername("")
+		setUserid("")
+		setSignin(false)
+		setSignup(false)
+	}
+
 	return (
 	    <div className="App">
 	    	<div className="Sign__Header">{!signin ? (!signup ? ("Sign In") : ( "Sign Up" )) : ("")}</div>
@@ -70,6 +78,7 @@ function App() {
 	    					</div>
 	    				</Header>
     					<Content className="site-layout" style={{ padding: '0 50px', marginTop: 64 }}>
+    						<Button style={{float:"right"}} onClick={handleSignOut}>Sign out</Button>
     						<New user={username}/>
 	    					<p/>
 				    		<Overview data={SData}/>
