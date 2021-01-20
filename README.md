@@ -29,14 +29,14 @@ Open [http://localhost:3000](http://localhost:3000) to view the app.
 
 ### Frontend
 
--React, WebSocket
--Apollo, Apollo-boost, Apollo-link-ws
+-React, WebSocket\
+-Apollo, Apollo-boost, Apollo-link-ws\
 -Ant Design
 
 ### Backend
 
--Node.js, Express
--Graphql, Graphql-yoga
+-Node.js, Express\
+-Graphql, Graphql-yoga\
 -Mongoose
 
 ### Database
@@ -53,10 +53,10 @@ Open [http://localhost:3000](http://localhost:3000) to view the app.
 
 ## Next
 
--fix the websocket and https' unstability
--beautify the UI
--add the analytic chart
--add the edit function
--add the user setting
--add the sorter/filter
+-fix the websocket and https' unstability\
+-beautify the UI\
+-add the analytic chart\
+-add the edit function\
+-add the user setting\
+-add the sorter/filter\
 -and so on...
