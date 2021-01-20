@@ -17,7 +17,7 @@ const httpLink = new HttpLink({
 
 const wsLink = new WebSocketLink({
 	uri: `ws://localhost:8080/`,
-	options: { reconnect: true, timeout: 30000, lazy:true }
+	options: { reconnect: true, timeout: 30000, lazy:true, transports: ['websocket'] }
 })
 //==============================================================
 wsLink.subscriptionClient.on("connecting", () => {
