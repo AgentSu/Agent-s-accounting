@@ -47,7 +47,22 @@ const db = mongoose.connection
 db.on('error', (error) => {
   console.error(error)
 })
-
+db.once('open', () => {console.log('MongoDB connected!')})
+const QLserver = new GraphQLServer({
+  typeDefs: './server/schema.graphql',
+  resolvers: {
+    Query,
+    Mutation,
+    Subscription
+  },
+  context: {
+    Spending,
+    Users,
+    pubsub
+  }
+})
+QLserver.start({port: 4000}, () => {console.log(`The QLserver is up on port 4000`)})
+/*
 db.once('open', () => {
   console.log('MongoDB connected!')
   
@@ -73,3 +88,4 @@ db.once('open', () => {
 
   startQLserver(Spending,Users)
 })
+*/
