@@ -26,8 +26,6 @@ const {Subscription} = require('./server/resolvers/Subscription')
 
 const pubsub = new PubSub()
 
-require('dotenv-defaults').config()
-
 const mongoose = require('mongoose')
 const Spending = require('./server/models/spending')
 const Users = require('./server/models/users')
