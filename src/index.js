@@ -17,7 +17,7 @@ const httpLink = new HttpLink({
 
 const wsLink = new WebSocketLink({
 	uri: `wss://agent-s-accounting.herokuapp.com:${process.env.PORT || 4000}/`,
-	options: { reconnect: true }
+	options: { reconnect: true, timeout: 30000 }
 })
 
 const link = split(
