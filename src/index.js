@@ -19,7 +19,30 @@ const wsLink = new WebSocketLink({
 	uri: `wss://agent-s-accounting.herokuapp.com:${process.env.PORT || 4000}/`,
 	options: { reconnect: true, timeout: 30000, lazy:true }
 })
+//==============================================================
+wsLink.subscriptionClient.on("connecting", () => {
+  console.log("connecting");
+});
 
+wsLink.subscriptionClient.on("connected", () => {
+  console.log("connected");
+});
+
+wsLink.subscriptionClient.on("reconnecting", () => {
+  console.log("reconnecting");
+});
+
+wsLink.subscriptionClient.on("reconnected", () => {
+  console.log("reconnected");
+});
+
+wsLink.subscriptionClient.on("disconnected", () => {
+  console.log("disconnected");
+});
+
+wsLink.subscriptionClient.maxConnectTimeGenerator.duration = () =>
+  wsLink.subscriptionClient.maxConnectTimeGenerator.max;
+//==============================================================
 const link = split(
 	({query}) => {
 		const definition = getMainDefinition(query)
