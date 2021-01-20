@@ -2,6 +2,7 @@ import {GraphQLServer, PubSub } from 'graphql-yoga'
 import Query from './resolvers/Query'
 import Mutation from './resolvers/Mutation'
 import Subscription from './resolvers/Subscription'
+console.log(Query)
 
 const pubsub = new PubSub()
 

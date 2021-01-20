@@ -20,17 +20,17 @@ console.log("Server Ready!")
 
 //==========================================================
 const {GraphQLServer, PubSub } = require('graphql-yoga')
-const Query = require('./server/resolvers/Query')
-const Mutation = require('./server/resolvers/Mutation')
-const Subscription = require('./server/resolvers/Subscription')
+const {Query} = require('./server/resolvers/Query')
+const {Mutation} = require('./server/resolvers/Mutation')
+const {Subscription} = require('./server/resolvers/Subscription')
 
 const pubsub = new PubSub()
 
 require('dotenv-defaults').config()
 
 const mongoose = require('mongoose')
-const Spending = require('./models/spending')
-const Users = require('./models/users')
+const Spending = require('./server/models/spending')
+const Users = require('./server/models/users')
 
 if (!process.env.MONGO_URL) {
   console.error('Missing MONGO_URL!!!')

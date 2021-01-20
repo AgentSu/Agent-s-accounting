@@ -6,4 +6,5 @@ const Subscription = {
 	}
 };
 
-export {Subscription as default}
+module.exports = { Subscription }
+//export {Subscription as default}
