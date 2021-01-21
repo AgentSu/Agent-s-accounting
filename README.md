@@ -2,11 +2,12 @@
 
 ## (Group 95) Simple Accounting Book
 
+Make a simple accounting servies.\
 I was planning to create plenty of features, but found out that its too difficult to do everything alone.
 
 Deployed: [https://agent-s-accounting.herokuapp.com/](https://agent-s-accounting.herokuapp.com/)
 
-Demo Link :
+Demo Link : [https://www.youtube.com/watch?v=KWqRwP7IvBs](https://www.youtube.com/watch?v=KWqRwP7IvBs)
 
 ## Available Scripts
 
